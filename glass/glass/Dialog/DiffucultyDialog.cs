@@ -6,12 +6,16 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using glass.framework;
 
 namespace glass.Dialog {
 	public partial class DifficultyDialog : Form {
 		public glass.config.Difficulty Difficulty=glass.config.Difficulty.normal;
 		public DifficultyDialog() {
 			InitializeComponent();
+			Framework.sndPlay.SoundLocation=@"Sounds\svarighet.wav";
+			//MessageBox.Show(Framework.sndPlay.SoundLocation);
+			Framework.sndPlay.Play();
 		}
 		
 		void BtnOkClick(object sender, EventArgs e) {
@@ -23,3 +27,4 @@ namespace glass.Dialog {
 		}
 	}
 }
+
